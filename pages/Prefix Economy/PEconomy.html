@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Musical's Snippets - Prefix Economy System</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+  <meta name="description" content="Prefix Economy System" />
+  <meta name="author" content="Musical">
+  <meta name="keywords" content="prefixeconomy">
+  <meta property="og:site_name" content="prefixeconomy" />
+  <meta property="og:title" content="Prefix Economy" />
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="Prefix Economy System" />
+  <meta property="og:image" content="/assets/images/coding.jpg" />
+  <meta property="og:image:width" content="500" />
+  <meta property="og:image:height" content="500" />
+  <meta property="og:image:type" content="/assets/images/coding.jpg" />
+  <meta property="og:image:alt" content="web logo" />
+  <meta name="theme-color" content="#ffffff">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta content="#ffffff" data-react-helmet="true">
+  <link rel="icon" href="/assets/images/coding.jpg">
+  <link href="https://fonts.googleapis.com/css?family=Assistant:700,700italic,200,200italic" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="/assets/styling/style.css" media="screen">
+  <link rel="stylesheet" href="/assets/styling/prism.css">
+  <link rel="canonical" href="/css-drop-shadows-without-images/demo/">
+</head>
+
+<body>
+  <div class="buttons">
+    <button onclick="window.history.back()">Main Page</button>
+  </div>
+  <br>
+  <br>
+
+  <div class="page-top">
+    <img class="top-image" src="/assets/images/Musical.jpg"> <a>Musical</a>
+  </div>
+
+  <div class="secondary-header">
+    <p>Prefix Economy System</p>
+  </div>
+
+  <div class="jump-header">
+    <details>
+      <summary>Setup</summary>
+      Variables: <br>
+      - Name : bankcash, Value : 0 <br>
+      - Name : handcash, Value : 0 <br>
+      - Name : lottery, Value : 0
+    </details>
+  </div>
+
+
+  <div class="jump-header">
+    <h1>Page Parts</h1>
+    <a href="#work-code">Work Code</a>
+    <br>
+    <a href="#$onInteraction-code">$onInteraction Code</a>
+    <br>
+    <a href="#withdraw-code">Withdraw Code</a>
+    <br>
+    <a href="#deposit-code">Deposit Code</a>
+    <br>
+    <a href="#balance-code">Balance Code</a>
+    <br>
+    <a href="#rob-code">Rob Code</a>
+    <br>
+    <a href="#givemoney-code">Give Money Code</a>
+    <br>
+    <a href="#gamble-code">Gamble Code</a>
+    <br>
+    <a href="#daily-code">Daily Code</a>
+    <br>
+    <a href="#buylottery-code">Buy Lottery Code</a>
+    <br>
+    <a href="#scratchlottery-code">Scratch Lottery Code</a>
+    <br>
+    <a href="#coinflip-code">Coin Flip Code</a>
+  </div>
+
+
+  <br>
+  <br>
+  <br>
+  <!-- Work CMD --->
+
+  <div class="code-title">
+    <a id="work-code">Work Code</a>
+  </div>
+
+  <div class="code-block">
+    <pre onclick="CopyToClipboard('code1', 'copy1');return false;"><span class="copytext" id="copy1"><i class="fa-regular fa-copy"></i> Click anywhere to copy</span>
+<code id="code1" class="language-javascript">
+  
+  $nomention
+  $reply
+  
+  $c[By Musical (617836989672325151)]
+  
+  $c[Check Variables]
+      
+         $varExistError[bankcash;**⚠️Variable needed, Name : `bankcash`, Value : `0`**]
+         $varExistError[handcash;**⚠️Variable needed, Name : `handcash`, Value : `0`**]
+         $varExistError[lottery;**⚠️Variable needed, Name : `lottery`, Value : `0`**]
+         
+  $c[Limiters]
+  
+       $onlyIf[$guildID!=;]
+       $cooldown[1h;**You can work again in %time%**]
+  $c[Message to user]
+       
+       
+  $title[Pick a Job]
+  $description[choose a job to do and earn cash]
+  $color[$random[44444;99999]]
+  $thumbnail[$userAvatar[$botID]]
+  
+  $c[Row 1]
+  
+  $addButton[no;fishing-$authorID;Go Fishing;primary;no;🎣]
+  $addButton[no;uber-$authorID;Be Uber;primary;no;🚕]
+  $addButton[no;pizza-$authorID;Deliver a Pizza;primary;no;🍕]
+  $addButton[no;barber-$authorID;Be a Barber;primary;no;💈]
+  $addButton[no;postman-$authorID;Post Man;primary;no;📬]
+  
+  $c[Row 2]
+  
+  $addButton[yes;cook-$authorID;Cook Food;primary;no;🧑‍🍳]
+  $addButton[no;develope-$authorID;Developer;primary;no;🧑‍💻]
+  $addButton[no;lawyer-$authorID;Lawyer;primary;no;⚖️]
+  $addButton[no;boxer-$authorID;Boxer;primary;no;🥊]
+  $addButton[no;journalist-$authorID;Journalist;primary;no;🗞️]
+  
+  $c[By Musical (617836989672325151)]
+  
+    </code></pre>
+  </div>
+
+  <br>
+  <br>
+
+  <!-- $onInteraction CMD --->
+
+  <div class="code-title">
+    <a id="$onInteraction-code">$onInteraction Code</a>
+  </div>
+
+  <div class="code-block">
+    <pre onclick="CopyToClipboard('code2', 'copy2');return false;"><span class="copytext" id="copy2"><i class="fa-regular fa-copy"></i> Click anywhere to copy</span>
+<code id="code2" class="language-javascript">
+      
+      $nomention
+  
+  $c[By Musical (617836989672325151)] 
+  
+  $if[$customID==fishing-$authorID]
+  $removeButtons
+  $description[**<@$authorID> You caught a pretty big fish and sold it for $random[100;500] Cash**]
+  $color[$random[11111;99999]]
+  $thumbnail[$userAvatar[$botID]]
+  $setVar[bankcash;$sum[$getVar[bankcash;$authorID];$random[100;500]];$authorID]
+  
+  $elseif[$customID==uber-$authorID]
+  $removeButtons
+  $description[**<@$authorID> You helped a $randomText[kid;old man;old woman;student] get to thier distension and earned $random[100;500] Cash**]
+  $color[$random[11111;99999]]
+  $thumbnail[$userAvatar[$botID]]
+  $setVar[bankcash;$sum[$getVar[bankcash;$authorID];$random[100;500]];$authorID]
+  
+  $elseif[$customID==pizza-$authorID]
+  $removeButtons
+  $description[**<@$authorID> You delivered a pizza and earned $random[100;500] Cash**]
+  $color[$random[11111;99999]]
+  $thumbnail[$userAvatar[$botID]]
+  $setVar[bankcash;$sum[$getVar[bankcash;$authorID];$random[100;500]];$authorID]
+  
+  $elseif[$customID==barber-$authorID]
+  $removeButtons
+  $description[**<@$authorID> the customer liked the hair cut and gave you $random[200;500] Cash**]
+  $color[$random[11111;99999]]
+  $thumbnail[$userAvatar[$botID]]
+  $setVar[bankcash;$sum[$getVar[bankcash;$authorID];$random[200;500]];$authorID]
+  
+  $elseif[$customID==postman-$authorID]
+  $removeButtons
+  $description[**<@$authorID>, the manager was happy for your work and gave you $random[300;700] Cash**]
+  $color[$random[11111;99999]]
+  $thumbnail[$userAvatar[$botID]]
+  $setVar[bankcash;$sum[$getVar[bankcash;$authorID];$random[300;700]];$authorID]
+  
+  $elseif[$customID==cook-$authorID]
+  $removeButtons
+  $description[**<@$authorID> You won the chef competition and earned $random[1000;2000] Cash**]
+  $color[$random[11111;99999]]
+  $thumbnail[$userAvatar[$botID]]
+  $setVar[bankcash;$sum[$getVar[bankcash;$authorID];$random[1000;2000]];$authorID]
+  
+  $elseif[$customID==develope-$authorID]
+  $removeButtons
+  $description[**<@$authorID> You helped a company make a security system and earned $random[3000;5000] Cash**]
+  $color[$random[11111;99999]]
+  $thumbnail[$userAvatar[$botID]]
+  $setVar[bankcash;$sum[$getVar[bankcash;$authorID];$random[3000;5000]];$authorID]
+  
+  $elseif[$customID==lawyer-$authorID]
+  $removeButtons
+  $description[**<@$authorID> You defended an innocent person and won the case, congrats. $random[5000;6000] Cash**]
+  $color[$random[11111;99999]]
+  $thumbnail[$userAvatar[$botID]]
+  $setVar[bankcash;$sum[$getVar[bankcash;$authorID];$random[5000;6000]];$authorID]
+  
+  
+  $elseif[$customID==boxer-$authorID]
+  $removeButtons
+  $description[**<@$authorID> You fought so well and won the grand prize $random[10000;15000] Cash**]
+  $color[$random[11111;99999]]
+  $thumbnail[$userAvatar[$botID]]
+  $setVar[bankcash;$sum[$getVar[bankcash;$authorID];$random[10000;15000]];$authorID]
+  
+  $elseif[$customID==journalist-$authorID]
+  $removeButtons
+  $description[**<@$authorID>, the magazine liked your article and gave you $random[500;1000] Cash**]
+  $color[$random[11111;99999]]
+  $thumbnail[$userAvatar[$botID]]
+  $setVar[bankcash;$sum[$getVar[bankcash;$authorID];$random[500;1000]];$authorID]
+  $endif
+      
+  $c[By Musical (617836989672325151)] 
+  
+  
+      
+    </code></pre>
+  </div>
+
+  <br>
+  <br>
+
+  <!-- Withdraw CMD --->
+
+  <div class="code-title">
+    <a id="withdraw-code"> Withdraw Code</a>
+  </div>
+
+  <div class="code-block">
+    <pre onclick="CopyToClipboard('code3', 'copy3');return false;"><span class="copytext" id="copy3"><i class="fa-regular fa-copy"></i> Click anywhere to copy</span>
+<code id="code3" class="language-javascript">
+      
+      $nomention
+  $reply
+  
+  $c[By Musical (617836989672325151)] 
+  
+  $c[Check Variables]
+      
+         $varExistError[bankcash;**⚠️Variable needed, Name : `allcash` , Value : `0`**]
+         $varExistError[handcash;**⚠️Variable needed, Name : `handcash`, Value : `0`**] 
+         $varExistError[lottery;**⚠️Variable needed, Name : `lottery`, Value : `0`**]
+         
+  $c[Limiters]
+  
+       $onlyIf[$guildID!=;]
+         $onlyIf[$noMentionMessage!=;**⚠️Provide an amount to withdraw**]
+          $onlyIf[$isNumber[$noMentionMessage]==true;**⚠️Invalid number or usage**]
+           $onlyIf[$checkContains[$noMentionMessage;-;.]!=true;**⚠️Invalid number or usage**]
+            $onlyIf[$getVar[bankcash;$authorID]>=$noMentionMessage;**⚠️You don't have that much money in your bank**]
+             
+  $c[Message to user]
+       
+       $description[**✅ Successfully withdraw $numberSeparator[$noMentionMessage;,] from your bank**]
+       $addTimestamp
+       $thumbnail[$userAvatar[$botID]]
+       $color[$random[55555;99999]]
+      
+  
+  $c[Variables Changes]
+      
+      $setVar[handcash;$sum[$getVar[handcash;$authorID];$noMentionMessage];$authorID]
+      $setVar[bankcash;$sub[$getVar[bankcash;$authorID];$noMentionMessage];$authorID]
+     
+  
+  $c[By Musical (617836989672325151)] 
+  
+    </code></pre>
+  </div>
+
+  <br>
+  <br>
+
+  <!-- Deposit CMD --->
+
+  <div class="code-title">
+    <a id="deposit-code"> Deposit Code</a>
+  </div>
+
+  <div class="code-block">
+    <pre onclick="CopyToClipboard('code4', 'copy4');return false;"><span class="copytext" id="copy4"><i class="fa-regular fa-copy"></i> Click anywhere to copy</span>
+<code id="code4" class="language-javascript">
+      
+      $nomention
+  $reply
+  
+  $c[By Musical (617836989672325151)] 
+  
+  $c[Check Variables]
+      
+         $varExistError[bankcash;**⚠️Variable needed, Name : `allcash` , Value : `0`**]
+         $varExistError[handcash;**⚠️Variable needed, Name : `handcash`, Value : `0`**] 
+         $varExistError[lottery;**⚠️Variable needed, Name : `lottery`, Value : `0`**]
+         
+  $c[Limiters]
+  
+       $onlyIf[$guildID!=;]
+         $onlyIf[$noMentionMessage!=;**⚠️Provide an amount to deposit**]
+          $onlyIf[$isNumber[$noMentionMessage]==true;**⚠️Invalid number or usage**]
+           $onlyIf[$checkContains[$noMentionMessage;-;.]!=true;**⚠️Invalid number or usage**]
+            $onlyIf[$getVar[handcash;$authorID]>=$noMentionMessage;**⚠️You don't have that much money in your hand**]
+     
+  $c[Message to user]
+       
+       $description[**✅ Successfully deposit $numberSeparator[$noMentionMessage;,] into your bank**]
+       $addTimestamp
+       $thumbnail[$userAvatar[$botID]]
+       $color[$random[55555;99999]]
+      
+  
+  $c[Variables Changes]
+      
+      $setVar[handcash;$sub[$getVar[handcash;$authorID];$noMentionMessage];$authorID]
+      $setVar[bankcash;$sum[$getVar[bankcash;$authorID];$noMentionMessage];$authorID]
+     
+     $c[By Musical (617836989672325151)] 
+  
+      
+    </code></pre>
+  </div>
+
+  <br>
+  <br>
+
+  <!-- Balance CMD --->
+
+  <div class="code-title">
+    <a id="balance-code">Balance Code</a>
+  </div>
+
+
+  <div class="code-block">
+    <pre onclick="CopyToClipboard('code5', 'copy5');return false;"><span class="copytext" id="copy5"><i class="fa-regular fa-copy"></i> Click anywhere to copy</span>
+<code id="code5" class="language-javascript">
+      
+      $nomention
+  $reply
+  
+  $c[By Musical (617836989672325151)] 
+  
+  $c[Check Variables]
+      
+         $varExistError[bankcash;**⚠️Variable needed, Name : `allcash` , Value : `0`**]
+         $varExistError[handcash;**⚠️Variable needed, Name : `handcash`, Value : `0`**] 
+         $varExistError[lottery;**⚠️Variable needed, Name : `lottery`, Value : `0`**]
+         
+  $c[Limiters]
+  
+       $onlyIf[$guildID!=;]
+        $onlyIf[$isBot[$mentioned[1;yes]]!=true;**Discord bots don't have a bank account**]
+  
+  $c[Message to user]
+       
+       $title[$username[$mentioned[1;yes]]'s Balance]
+       $addField[Hand;$getVar[handcash;$mentioned[1;yes]]]
+       $addField[Bank;$getVar[bankcash;$mentioned[1;yes]]]
+       $addField[Total;$sum[$getVar[bankcash;$mentioned[1;yes]];$getVar[handcash;$mentioned[1;yes]]]]
+       $addField[Lottery;$getVar[lottery;$mentioned[1;yes]]]
+       $footer[Bank Statistics]
+       $addTimestamp
+       $thumbnail[$userAvatar[$botID]]
+       $color[$random[55555;99999]]
+  
+  $c[By Musical (617836989672325151)] 
+  
+      
+    </code></pre>
+  </div>
+
+
+  <br>
+  <br>
+
+  <!-- Rob CMD --->
+
+  <div class="code-title">
+    <a id="rob-code">Rob Code</a>
+  </div>
+
+  <div class="code-block">
+    <pre onclick="CopyToClipboard('code6', 'copy6');return false;"><span class="copytext" id="copy6"><i class="fa-regular fa-copy"></i> Click anywhere to copy</span>
+<code id="code6" class="language-javascript">
+      
+      $nomention
+  $reply
+  
+  $c[By Musical (617836989672325151)] 
+  
+  $c[Check Variables]
+      
+         $varExistError[bankcash;**⚠️Variable needed, Name : `handcash`, Value : `0`**] 
+         $varExistError[handcash;**⚠️Variable needed, Name : `handcash`, Value : `0`**]
+         $varExistError[lottery;**⚠️Variable needed, Name : `lottery`, Value : `0`**]
+         
+  $c[Limiters]
+  
+       $onlyIf[$guildID!=;]
+        $onlyIf[$mentioned[1]!=;**⚠️Mention someone to rob**]
+         $onlyIf[$mentioned[1]!=$authorID;**⚠️You can't rob yourself**]
+          $onlyIf[$isBot[$mentioned[1;yes]]!=true;**Discord bots don't have a bank account**]
+           $onlyIf[$getVar[bankcash;$mentioned[1]]>=10000;**User must have at least 10000 Cash in thier bank**]
+            $onlyIf[$getVar[bankcash;$authorID]>=10000;**You must have at least 10000 Cash in your bank**]
+             $cooldown[3h;**Wait %time% untill next robbery**]
+   
+  $c[Robbing System]
+   
+    $var[luck;$random[1;7]]
+   
+   $c[Robbing Success]
+   
+  $if[$or[$var[luck]==1;$var[luck]==2]]
+  $description[**✅ Your robbery was successful,You robbed $random[1000;7000]Cash**]
+  $color[00FF3D]
+  
+  $c[Variable Changes]
+  $setVar[bankcash;$sum[$getVar[bankcash;$authorID];$random[1000;7000]];$authorID]
+  $setVar[bankcash;$sub[$getVar[bankcash;$mentioned[1]];$random[1000;7000]];$mentioned[1]]
+  
+  $endif
+  
+  $c[Robbing Failed]
+  
+  $if[$or[$var[luck]==3;$var[luck]==4;$var[luck]==5;$var[luck]==6]]
+  $description[**❌ Your robbery was unsuccessful,You was fined $random[2000;8000] Cash**]
+  $color[EF1532]
+  
+  $c[Variable Changes]
+  $setVar[bankcash;$sub[$getVar[bankcash;$authorID];$random[2000;8000]];$authorID]
+  $setVar[bankcash;$sum[$getVar[bankcash;$mentioned[1]];$random[2000;8000]];$mentioned[1]]
+  
+  $endif
+  
+  
+  $c[By Musical (617836989672325151)] 
+   
+      
+    </code></pre>
+  </div>
+
+
+  <br>
+  <br>
+
+  <!-- Give Money CMD --->
+
+  <div class="code-title">
+    <a id="givemoney-code">Give Money Code</a>
+  </div>
+
+  <div class="code-block">
+    <pre onclick="CopyToClipboard('code7', 'copy7');return false;"><span class="copytext" id="copy7"><i class="fa-regular fa-copy"></i> Click anywhere to copy</span>
+<code id="code7" class="language-javascript">
+      
+      $nomention
+  $reply
+  
+  $c[By Musical (617836989672325151)] 
+  
+  $c[Check Variables]
+      
+         $varExistError[bankcash;**⚠️Variable needed, Name : `handcash`, Value : `0`**] 
+         $varExistError[handcash;**⚠️Variable needed, Name : `handcash`, Value : `0`**]
+         $varExistError[lottery;**⚠️Variable needed, Name : `lottery`, Value : `0`**]
+         
+       
+  $c[Limiters]
+       
+         $onlyIf[$guildID!=;]
+          $onlyIf[$mentioned[1]!=;**⚠️Please mention somebody to give money**]
+           $onlyIf[$mentioned[1]!=$authorID;**⚠️ You Can't give money to yourself**]
+            $onlyIf[$isBot[$mentioned[1]]!=true;**Discord bots don't have a bank account**]
+             $onlyIf[$noMentionMessage!=;**⚠️Provide an amount to send**]
+              $onlyIf[$isNumber[$noMentionMessage]==true;**⚠️Invalid number or usage**]
+               $onlyIf[$checkContains[$noMentionMessage;-;.]!=true;**⚠️Invalid number or usage**]
+                $onlyIf[$getVar[handcash;$authorID]>=$noMentionMessage;**⚠️You don't have that much money in your hand**]
+     
+         
+  $c[Messsge to user]
+  
+  $description[**<@$authorID> sent $noMentionMessage Cash to <@$mentioned[1]>**]
+  $color[5865F2]
+  
+  $c[Variable Changes]
+  
+  
+      $setVar[handcash;$sub[$getVar[handcash;$authorID];$noMentionMessage];$authorID]
+     
+      $setVar[handcash;$sum[$getVar[handcash;$mentioned[1]];$noMentionMessage];$mentioned[1]]
+     
+    
+    $c[By Musical (617836989672325151)] 
+  
+      
+    </code></pre>
+  </div>
+
+
+  <br>
+  <br>
+
+  <!-- Gamble CMD --->
+
+  <div class="code-title">
+    <a id="gamble-code">Gamble Code</a>
+  </div>
+
+  <div class="code-block">
+    <pre onclick="CopyToClipboard('code8', 'copy8');return false;"><span class="copytext" id="copy8"><i class="fa-regular fa-copy"></i> Click anywhere to copy</span>
+<code id="code8" class="language-javascript">
+      
+      $nomention
+  $reply
+  
+  $c[By Musical (617836989672325151)] 
+  
+  $c[Check Variables]
+      
+         $varExistError[bankcash;**⚠️Variable needed, Name : `handcash`, Value : `0`**] 
+         $varExistError[handcash;**⚠️Variable needed, Name : `handcash`, Value : `0`**]
+         $varExistError[lottery;**⚠️Variable needed, Name : `lottery`, Value : `0`**]
+         
+  $c[Limiters]
+       
+         $onlyIf[$guildID!=;]
+          $onlyIf[$noMentionMessage!=;**⚠️Provide an amount to gamble with**]
+           $onlyIf[$isNumber[$noMentionMessage]==true;**⚠️Invalid number or usage**]
+            $onlyIf[$checkContains[$noMentionMessage;-;.]!=true;**⚠️Invalid number or usage**]
+             $onlyIf[$getVar[handcash;$authorID]>=$noMentionMessage;**⚠️You don't have that much money in your hand**]
+             
+             
+  
+  $c[Gamble System]
+  
+     $var[luck;$random[1;7]]
+   
+   $c[Gamble Success]
+   
+  $if[$or[$var[luck]==1;$var[luck]==2]]
+  $description[**✅ Your won the gamble ,You gained extra $multi[$noMentionMessage;$random[1;5]] Cash**]
+  $color[00FF3D]
+  
+  $c[Variable Changes]
+  
+  $setVar[handcash;$sum[$getVar[handcash;$authorID];$multi[$noMentionMessage;$random[1;5]]];$authorID]
+  
+  $endif
+  
+  $c[Gamble Failed]
+  
+  $if[$or[$var[luck]==3;$var[luck]==4;$var[luck]==5;$var[luck]==6]]
+  $description[**❌ Your Gamble was unsuccessful,You lost the money**]
+  $color[EF1532]
+  
+  $c[Variable Changes]
+  
+  $setVar[handcash;$sub[$getVar[handcash;$authorID];$noMentionMessage];$authorID]
+  
+  $endif
+  
+  $c[By Musical (617836989672325151)] 
+  
+      
+    </code></pre>
+  </div>
+
+
+  <br>
+  <br>
+
+  <!-- Daily CMD --->
+
+  <div class="code-title">
+    <a id="daily-code">Daily Code</a>
+  </div>
+
+  <div class="code-block">
+    <pre onclick="CopyToClipboard('code9', 'copy9');return false;"><span class="copytext" id="copy9"><i class="fa-regular fa-copy"></i> Click anywhere to copy</span>
+<code id="code9" class="language-javascript">
+      
+      $nomention
+  $reply
+  
+  $c[By Musical (617836989672325151)] 
+  
+  $c[Check Variables]
+      
+         $varExistError[bankcash;**⚠️Variable needed, Name : `allcash` , Value : `0`**]
+         $varExistError[handcash;**⚠️Variable needed, Name : `handcash`, Value : `0`**] 
+         $varExistError[lottery;**⚠️Variable needed, Name : `lottery`, Value : `0`**]
+         
+  $c[Limiters]
+  
+       $onlyIf[$guildID!=;]
+        $cooldown[24h;** Wait %time% to get the next daily**]
+       
+  
+  $c[Message to user]
+  
+  $title[Your Daily Income]
+  $description[**You earned $random[3000;5000] Cash**]
+  $color[$randomText[11111;99999]]
+  $thumbnail[$userAvatar[$botID]]
+  
+  
+  $c[Variable Changes]
+  
+    $setVar[handcash;$sum[$getVar[handcash;$authorID];$random[3000;5000]];$authorID]
+   
+   $c[By Musical (617836989672325151)] 
+   
+      
+    </code></pre>
+  </div>
+
+
+  <br>
+  <br>
+
+  <!-- Buy Lottery CMD --->
+
+  <div class="code-title">
+    <a id="buylottery-code">Buy Lottery Code</a>
+  </div>
+
+  <div class="code-block">
+    <pre onclick="CopyToClipboard('code10', 'copy10');return false;"><span class="copytext" id="copy10"><i class="fa-regular fa-copy"></i> Click anywhere to copy</span>
+<code id="code10" class="language-javascript">
+      
+      $nomention
+  $reply
+  
+  $c[By Musical (617836989672325151)] 
+  
+  $c[Check Variables]
+      
+         $varExistError[bankcash;**⚠️Variable needed, Name : `allcash` , Value : `0`**]
+         $varExistError[handcash;**⚠️Variable needed, Name : `handcash`, Value : `0`**] 
+         $varExistError[lottery;**⚠️Variable needed, Name : `lottery`, Value : `0`**]
+         
+  $c[Limiters]
+  
+       $onlyIf[$guildID!=;]
+       
+  $c[Lottery System]
+    
+   $if[$noMentionMessage==]
+   
+   $c[Limiters]
+   
+     $onlyIf[$getVar[handcash;$authorID]>=20000;**You need at least 20000 Cash in your hand**]
+     
+      $c[Message To user] 
+      
+        $title[Lottery Purchased]
+        $description[**You have bought 1 lottery ticket**]
+        $color[B67FE6]
+        $footer[+scratch, to activate one per time]
+        
+  $c[Variable Changes]
+      
+        $setVar[lottery;$sum[$getVar[lottery;$authorID];1];$authorID]
+        $setVar[handcash;$sub[$getVar[handcash;$authorID];20000];$authorID]
+   
+   $else
+   
+   $c[Limiters]
+   
+  $onlyIf[$isNumber[$noMentionMessage]==true;**⚠️Invalid number or usage**]
+  $onlyIf[$checkContains[$noMentionMessage;-;.]!=true;**⚠️Invalid number or usage**]
+  $onlyIf[$getVar[handcash;$authorID]>=$multi[20000;$noMentionMessage];**⚠️You don't have that much money in your hand**]
+     
+  
+  $c[Message To User]
+  
+      $title[Lottery Purchased]
+      $description[**You have bought $noMentionMessage lottery tickets**]
+      $color[B67FE6]
+      $footer[+scratch, to activate one per time]
+  
+  $c[Variable Changes]
+  
+     $setVar[lottery;$sum[$getVar[lottery;$authorID];$noMentionMessage];$authorID]
+     $setVar[handcash;$sub[$getVar[handcash;$authorID];$multi[20000;$noMentionMessage]];$authorID]
+  
+   $endif
+  
+  
+  $c[By Musical (617836989672325151)] 
+   
+      
+    </code></pre>
+  </div>
+
+
+  <br>
+  <br>
+
+  <!-- Scratch Lottery CMD --->
+
+  <div class="code-title">
+    <a id="scratchlottery-code">Scratch Lottery Code</a>
+  </div>
+
+  <div class="code-block">
+    <pre onclick="CopyToClipboard('code11', 'copy11');return false;"><span class="copytext" id="copy11"><i class="fa-regular fa-copy"></i> Click anywhere to copy</span>
+<code id="code11" class="language-javascript">
+      
+      $nomention
+  $reply
+  
+  $c[By Musical (617836989672325151)] 
+  
+  $c[Check Variables]
+      
+         $varExistError[bankcash;**⚠️Variable needed, Name : `allcash` , Value : `0`**]
+         $varExistError[handcash;**⚠️Variable needed, Name : `handcash`, Value : `0`**] 
+         $varExistError[lottery;**⚠️Variable needed, Name : `lottery`, Value : `0`**]
+         
+  $c[Limiters]
+  
+       $onlyIf[$guildID!=;]
+       $onlyIf[$getVar[lottery;$authorID]!=0;**You don't have any lottery tickets**]
+      
+     
+  $c[Scratch System]
+  
+     $var[luck;$random[1;16]]
+   
+    $c[Scratch Failed]
+   
+  $if[$or[$var[luck]==1;$var[luck]==2;$var[luck]==3;$var[luck]==4;$var[luck]==5;$var[luck]==6;$var[luck]==7]]
+  $description[**You lost the lottery ,You gained nothing from it**]
+  $color[B67FE6]
+  $c[Variable Changes]
+  
+  $setVar[lottery;$sub[$getVar[lottery;$authorID];1];$authorID]
+  
+  $endif
+  
+  
+  $c[Scratch Win]
+  
+  $if[$or[$var[luck]==8;$var[luck]==9;$var[luck]==10;$var[luck]==11;$var[luck]==12]]
+  $description[**✅ Your lottery was a win,You won $random[25000;50000] Cash**]
+  $color[EF1532]
+  
+  $c[Variable Changes]
+  
+  $setVar[lottery;$sub[$getVar[lottery;$authorID];1];$authorID]
+  $setVar[handcash;$sum[$getVar[handcash;$authorID];$random[25000;50000]];$authorID]
+  $endif
+  
+  $c[Scratch Win]
+  
+  $if[$or[$var[luck]==13;$var[luck]==14;$var[luck]==15]]
+  $description[**✅ Your lottery was a win,You won $random[60000;100000] Cash**]
+  $color[EF1532]
+  
+  $c[Variable Changes]
+  
+  $setVar[lottery;$sub[$getVar[lottery;$authorID];1];$authorID]
+  $setVar[handcash;$sum[$getVar[handcash;$authorID];$random[60000;100000]];$authorID]
+  $endif
+  
+  $c[By Musical (617836989672325151)] 
+  
+      
+    </code></pre>
+  </div>
+
+  <br>
+  <br>
+
+  <!-- Coin Flip CMD --->
+
+  <div class="code-title">
+    <a id="coinflip-code">Coin Flip Code</a>
+  </div>
+
+  <div class="code-block">
+    <pre onclick="CopyToClipboard('code12', 'copy12');return false;"><span class="copytext" id="copy12"><i class="fa-regular fa-copy"></i> Click anywhere to copy</span>
+<code id="code12" class="language-javascript">
+      
+      $nomention
+  $reply
+  
+  $c[By Musical (617836989672325151)] 
+  
+  $c[Check Variables]
+      
+         $varExistError[bankcash;**⚠️Variable needed, Name : `handcash`, Value : `0`**] 
+         $varExistError[handcash;**⚠️Variable needed, Name : `handcash`, Value : `0`**]
+         $varExistError[lottery;**⚠️Variable needed, Name : `lottery`, Value : `0`**]
+         
+  $c[Limiters]
+       
+         $onlyIf[$guildID!=;]
+  
+          $onlyIf[$noMentionMessage[1]!=;**⚠️Provide an amount to gamble with in Coin Flip**]
+           $onlyIf[$isNumber[$noMentionMessage[1]]==true;**⚠️Invalid number or usage**]
+            $onlyIf[$checkContains[$noMentionMessage[1];-;.]!=true;**⚠️Invalid number or usage**]
+             $onlyIf[$getVar[handcash;$authorID]>=$noMentionMessage[1];**⚠️You don't have that much money in your hand**]
+             
+              $onlyIf[$noMentionMessage[2]!=;**⚠️Head or Tails?!**]
+               $onlyIf[$isNumber[$noMentionMessage[2]]!=true;**⚠️Message should be : Head or Tails?**]
+                $onlyIf[$checkContains[$noMentionMessage[2];-;.]!=true;**⚠️Invalid number or usage**]
+                 $onlyIf[$checkContains[$noMentionMessage[2];Head;Tails]==true;**⚠️Message should be : Head or Tails? `First letter UpperCase`**]
+                  
+  
+  $c[Coin Flip Wierd System]
+  
+     $var[flip;$randomText[Head;Tails]]
+    
+   
+   $c[Coin Flip Wining]
+   
+   $if[$var[flip]==$noMentionMessage[2]]
+  
+  
+      $c[Message To user]
+      
+      $title[Coin Flip Won]
+      $description[**It was `$var[flip]`, Congratulations you earned extra `$multi[$noMentionMessage[1];$random[1;5]]` Cash**]
+      $color[5865F2]
+      
+      
+      $c[Variable Changes]
+      
+    $setVar[handcash;$sum[$getVar[handcash;$authorID];$multi[$noMentionMessage[1];$random[1;5]]];$authorID]
+  
+  
+  $c[Coin Flip Losing]
+  
+  $else
+  
+     $c[Message To user]
+      
+      $title[Coin Flip Lost]
+      $description[**It was `$var[flip]`, Unfortunately you lost the money you gambled**]
+      $color[5865F2]
+     
+    
+    $c[Variable Changes]
+      
+    $setVar[handcash;$sub[$getVar[handcash;$authorID];$noMentionMessage[1]];$authorID]
+  
+  
+  $endif
+  
+  $c[By Musical (617836989672325151)] 
+      
+    </code></pre>
+  </div>
+
+  <script src="/assets/scripting/script.js"></script>
+
+  <script src="/assets/scripting/prism.js"></script>
+  <script>
+    Prism.highlightAll();
+  </script>
+</body>
+
+</html>
