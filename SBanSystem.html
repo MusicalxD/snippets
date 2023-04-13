@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Musical's Snippets - Simple Ban System</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+  <meta name="description" content="Simple Ban System" />
+  <meta name="author" content="Musical">
+  <meta name="keywords" content="simple ban system">
+  <meta property="og:site_name" content="simple ban system" />
+  <meta property="og:title" content="Simple Ban System" />
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="Simple Ban System" />
+  <meta property="og:image" content="coding.jpg" />
+  <meta property="og:image:width" content="500" />
+  <meta property="og:image:height" content="500" />
+  <meta property="og:image:type" content="coding.jpg" />
+  <meta property="og:image:alt" content="web logo" />
+  <meta name="theme-color" content="#ffffff">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta content="#ffffff" data-react-helmet="true">
+  <link rel="icon" href="coding.jpg">
+  <link href="https://fonts.googleapis.com/css?family=Assistant:700,700italic,200,200italic" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="style.css" media="screen">
+  <link rel="stylesheet" href="prism.css">
+
+</head>
+
+<body>
+  <div class="buttons">
+    <button onclick="window.history.back()">Main Page</button>
+  </div>
+  <br>
+  <br>
+
+  <div class="page-top">
+    <img class="top-image" src="Musical.jpg"> <a>Musical</a>
+  </div>
+
+  <div class="secondary-header">
+    <p>Simple Ban System</p>
+  </div>
+
+  <div class="jump-header">
+    <details>
+      <summary>Info</summary>
+      <div> Consider its Simple, maybe it will grow oneday.
+        This is made to work only on one server, if you want it to be used in multiple servers add a variable for the ban logs channel and add a command so other servers can set thier own channel
+        <br> <br>
+        note : the video is a a little bit different from the codes, because i made an improvement. 
+      </div>
+      <video width="320" height="240" controls>
+        <source src="sbansystem.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+    </details>
+  </div>
+
+
+  <div class="jump-header">
+    <h1>Page Parts</h1>
+    <a href="#main-code">Ban Code</a>
+    <br>
+    <a href="#$onInteraction-code">$onInteraction Code</a>
+    <br>
+  </div>
+  <br>
+  <br>
+  <br>
+  <!-- Ban CMD --->
+
+  <div class="code-title">
+    <a id="main-code">Ban Code</a>
+  </div>
+
+  <div class="code-block">
+    <pre onclick="CopyToClipboard('code1', 'copy1');return false;"><span class="copytext" id="copy1"><i class="fa-regular fa-copy"></i> Click anywhere to copy</span>
+<code id="code1" class="language-javascript">
+  
+$nomention
+$c[By Musical (617836989672325151)]
+$c[Version : 1.0]
+
+$sendMessage[Successfully created a ban report.]
+
+$var[banlogs;1095888191682256916] 
+
+$var[msgID;$sendEmbedMessage[$var[banlogs];<@$mentioned[1]>;Ban Report;https://discord.com/channels/$guildID/$channelID/$messageID;User : <@$mentioned[1]> $mentioned[1]
+Admin : <@$authorID>
+Reason : $noMentionMessage;e91e63;$username#$discriminator[];$authorAvatar;$username[$mentioned[1]]#$discriminator[$mentioned[1]],,,$mentioned[1],,,$noMentionMessage;$userAvatar[$mentioned[1]];$serverIcon;;yes;yes]]
+
+$useChannel[$var[banlogs]] 
+
+$addButton[no;appban;Approve;success;no;✅;$var[msgID]]
+$addButton[no;denban;Deny;danger;no;❌;$var[msgID]]
+
+$c[By Musical (617836989672325151)]
+
+    </code></pre>
+  </div>
+
+  <br>
+  <br>
+
+  <!-- $onInteraction CMD --->
+
+  <div class="code-title">
+    <a id="$onInteraction-code">$onInteraction Code</a>
+  </div>
+
+  <div class="code-block">
+    <pre onclick="CopyToClipboard('code2', 'copy2');return false;"><span class="copytext" id="copy2"><i class="fa-regular fa-copy"></i> Click anywhere to copy</span>
+<code id="code2" class="language-javascript">
+      
+     $nomention
+$c[By Musical (617836989672325151)]
+$c[Version : 1.0]
+
+$onlyBotPerms[ban;**Bot missing permission : `BAN_MEMBERS`**]
+$onlyPerms[ban; **User missing permission : `BAN_MEMBERS`**]
+$if[$customID==appban] 
+$textSplit[$getEmbedData[$channelID;$messageID;1;footer];,,,] 
+$var[user;$splitText[2]]
+$var[reason;$splitText[3]]
+
+$title[Ban Approved] 
+$description[$getEmbedData[$channelID;$messageID;1;description] 
+Approved By : <@$authorID>]
+$color[00ff88]
+$removeButtons
+
+$banID[$var[reason];$var[user]]
+$endif
+
+$if[$customID==denban]
+
+$title[Ban Denied] 
+$description[$getEmbedData[$channelID;$messageID;1;description] 
+Denied By : <@$authorID>]
+$color[e91e63]
+$removeButtons
+$endif
+
+$c[By Musical (617836989672325151)]
+
+
+    </code></pre>
+  </div>
+
+  <script src="script.js"></script>
+
+  <script src="prism.js"></script>
+  <script>
+    Prism.highlightAll();
+  </script>
+</body>
+
+</html>
