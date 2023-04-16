@@ -322,21 +322,20 @@
   
   $description[**✅ `$serverName[$guildID]` Gained Premium 
   By : <@$authorID>
-  Time : <\t:$getTimestamp:F>
-  Expire at : <\t:$calculate[$getTimestamp+$var[exp]]:F>**] $c[remove the \ befor the t in the Time and Expire at] 
+  Time : &lt;t:$getTimestamp:F>
+  Expire at : &lt;t:$calculate[$getTimestamp+$var[exp]]:F>**]
   $color[00FF3D]
   
   $setServerVar[preexp;$calculate[$getTimestamp+$var[exp]];$guildID]
   $setServerVar[premium;true;$guildID]
   $setVar[precode;false;$authorID]
   
-  $sendEmbedMessage[$var[LC];;Premium Code Activated;https://discord.com/channels/$guildID/$channelID/$messageID;<@$authorID> (`$authorID`) Activated a premium code `$noMentionMessage` In [$serverName[$guildID]\]($getServerInvite) <\t:$getTimestamp:F>, Expire at : <\t:$calculate[$getTimestamp+$var[exp]]:F> ;5865F2;;;Server ID : $guildID;$serverIcon;;;yes] $c[Remove the \ before the t in the message embed]
+  $sendEmbedMessage[$var[LC];;Premium Code Activated;https://discord.com/channels/$guildID/$channelID/$messageID;<@$authorID> (`$authorID`) Activated a premium code `$noMentionMessage` In [$serverName[$guildID]\]($getServerInvite) &lt;t:$getTimestamp:F>, Expire at : &lt;t:$calculate[$getTimestamp+$var[exp]]:F> ;5865F2;;;Server ID : $guildID;$serverIcon;;;yes]
   $c[Credit to Musical#8030 ("617836989672325151")]
   
   
       </code></pre>
     </div>
-
 
     <br>
     <br>
